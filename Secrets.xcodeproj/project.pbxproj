@@ -34,12 +34,11 @@
 		E747E9CF1AD8204C0049018E /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747E9CE1AD8204C0049018E /* Keys.swift */; };
 		E747E9D21AD824EA0049018E /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E747E9D01AD824EA0049018E /* Bolts.framework */; };
 		E747E9D31AD824EA0049018E /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E747E9D11AD824EA0049018E /* Parse.framework */; };
-		E7D59F3E1AD8384500ECB484 /* SignInFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D59F3D1AD8384500ECB484 /* SignInFlow.storyboard */; };
+		E7D59F3E1AD8384500ECB484 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D59F3D1AD8384500ECB484 /* Authentication.storyboard */; };
 		E7D59F401AD83EE400ECB484 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D59F3F1AD83EE400ECB484 /* WelcomeViewController.swift */; };
 		E7D59F421AD8428000ECB484 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D59F411AD8428000ECB484 /* SignUpViewController.swift */; };
 		E7D59F441AD8428F00ECB484 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D59F431AD8428F00ECB484 /* SignInViewController.swift */; };
 		E7D59F481AD8489700ECB484 /* UserAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D59F471AD8489700ECB484 /* UserAuthenticator.swift */; };
-		E7D59F4C1AD8725700ECB484 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D59F4B1AD8725700ECB484 /* AuthenticationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,12 +96,11 @@
 		E747E9CE1AD8204C0049018E /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		E747E9D01AD824EA0049018E /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Secrets/Frameworks/Bolts.framework; sourceTree = "<group>"; };
 		E747E9D11AD824EA0049018E /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Secrets/Frameworks/Parse.framework; sourceTree = "<group>"; };
-		E7D59F3D1AD8384500ECB484 /* SignInFlow.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SignInFlow.storyboard; sourceTree = "<group>"; };
+		E7D59F3D1AD8384500ECB484 /* Authentication.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		E7D59F3F1AD83EE400ECB484 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = ViewControllers/WelcomeViewController.swift; sourceTree = "<group>"; };
 		E7D59F411AD8428000ECB484 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = ViewControllers/SignUpViewController.swift; sourceTree = "<group>"; };
 		E7D59F431AD8428F00ECB484 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = ViewControllers/SignInViewController.swift; sourceTree = "<group>"; };
 		E7D59F471AD8489700ECB484 /* UserAuthenticator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAuthenticator.swift; sourceTree = "<group>"; };
-		E7D59F4B1AD8725700ECB484 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthenticationViewController.swift; path = ViewControllers/AuthenticationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -297,7 +295,6 @@
 		E747E99E1AD6D56E0049018E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				E7D59F4B1AD8725700ECB484 /* AuthenticationViewController.swift */,
 				E747E99F1AD6D5920049018E /* HomeViewController.swift */,
 				E7D59F3F1AD83EE400ECB484 /* WelcomeViewController.swift */,
 				E7D59F411AD8428000ECB484 /* SignUpViewController.swift */,
@@ -327,7 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				651E9853A61AB9ED394495AE /* Main.storyboard */,
-				E7D59F3D1AD8384500ECB484 /* SignInFlow.storyboard */,
+				E7D59F3D1AD8384500ECB484 /* Authentication.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -435,7 +432,7 @@
 			files = (
 				82205F9840595A24D8D0ED45 /* Images.xcassets in Resources */,
 				D9567208177D66BC1F4D50BD /* Settings.bundle in Resources */,
-				E7D59F3E1AD8384500ECB484 /* SignInFlow.storyboard in Resources */,
+				E7D59F3E1AD8384500ECB484 /* Authentication.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -502,7 +499,6 @@
 			files = (
 				C2D074A6E528C83C3DA916FE /* AppDelegate.swift in Sources */,
 				E7D59F421AD8428000ECB484 /* SignUpViewController.swift in Sources */,
-				E7D59F4C1AD8725700ECB484 /* AuthenticationViewController.swift in Sources */,
 				74AEE5CFB36603A65F62C9D7 /* Main.storyboard in Sources */,
 				200FD855D82021E68500E1EA /* LaunchScreen.xib in Sources */,
 				E7D59F441AD8428F00ECB484 /* SignInViewController.swift in Sources */,

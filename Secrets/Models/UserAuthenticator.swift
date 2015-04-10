@@ -15,11 +15,21 @@ class UserAuthenticator {
         var user = PFUser()
         user.username = email
         user.password = password
-        user.signUpInBackgroundWithBlock() { (succeeded: Bool, error: NSError?) -> Void in
+        user.signUpInBackgroundWithBlock() { (succeeded: Bool, error: NSError?) in
             if let err = error {
                 block(failure(err))
             } else {
                 block(success(succeeded))
+            }
+        }
+    }
+    
+    class func signIn(email: String, password: String, block: Result<PFUser, NSError> -> Void) {
+        PFUser.logInWithUsernameInBackground(email, password: password) { (user: PFUser?, error: NSError?) in
+            if let err = error {
+                block(failure(err))
+            } else {
+                block(success(user!))
             }
         }
     }
