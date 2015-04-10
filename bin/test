@@ -2,4 +2,4 @@
 
 set -o pipefail
 
-xcodebuild test -workspace Secrets.xcworkspace -scheme Secrets -sdk iphonesimulator BUILD_ACTIVE_ARCH=NO | xcpretty -t -c
+xcodebuild test -scheme Secrets -sdk iphonesimulator BUILD_ACTIVE_ARCH=NO | xcpretty -t -c

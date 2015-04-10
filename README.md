@@ -7,7 +7,8 @@ Run `bin/setup`
 This will:
 
  - Install the gem dependencies
- - Install the pod dependencies
+ - Install the carthage dependencies
+ - Create a `Keys.swift` for your private keys
 
 ## Testing ##
 

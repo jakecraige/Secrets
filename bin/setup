@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 
 bundle install
-pod install
+carthage checkout
+
+cp Secrets/KeysExample.swift Secrets/Keys.swift
