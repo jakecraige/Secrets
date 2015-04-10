@@ -39,6 +39,7 @@
 		E7D59F421AD8428000ECB484 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D59F411AD8428000ECB484 /* SignUpViewController.swift */; };
 		E7D59F441AD8428F00ECB484 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D59F431AD8428F00ECB484 /* SignInViewController.swift */; };
 		E7D59F481AD8489700ECB484 /* UserAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D59F471AD8489700ECB484 /* UserAuthenticator.swift */; };
+		E7D59F4C1AD8725700ECB484 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D59F4B1AD8725700ECB484 /* AuthenticationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +102,7 @@
 		E7D59F411AD8428000ECB484 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = ViewControllers/SignUpViewController.swift; sourceTree = "<group>"; };
 		E7D59F431AD8428F00ECB484 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = ViewControllers/SignInViewController.swift; sourceTree = "<group>"; };
 		E7D59F471AD8489700ECB484 /* UserAuthenticator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAuthenticator.swift; sourceTree = "<group>"; };
+		E7D59F4B1AD8725700ECB484 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthenticationViewController.swift; path = ViewControllers/AuthenticationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -295,6 +297,7 @@
 		E747E99E1AD6D56E0049018E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				E7D59F4B1AD8725700ECB484 /* AuthenticationViewController.swift */,
 				E747E99F1AD6D5920049018E /* HomeViewController.swift */,
 				E7D59F3F1AD83EE400ECB484 /* WelcomeViewController.swift */,
 				E7D59F411AD8428000ECB484 /* SignUpViewController.swift */,
@@ -499,6 +502,7 @@
 			files = (
 				C2D074A6E528C83C3DA916FE /* AppDelegate.swift in Sources */,
 				E7D59F421AD8428000ECB484 /* SignUpViewController.swift in Sources */,
+				E7D59F4C1AD8725700ECB484 /* AuthenticationViewController.swift in Sources */,
 				74AEE5CFB36603A65F62C9D7 /* Main.storyboard in Sources */,
 				200FD855D82021E68500E1EA /* LaunchScreen.xib in Sources */,
 				E7D59F441AD8428F00ECB484 /* SignInViewController.swift in Sources */,
