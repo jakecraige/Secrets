@@ -8,6 +8,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
         initializeParseWithLaunchOptions(launchOptions)
+        
+        var storyboardName = "Authentication"
+        if let user = PFUser.currentUser() {
+            storyboardName = "Main"
+        }
+
+        let storyboard = UIStoryboard(name: storyboardName, bundle: NSBundle.mainBundle())
+        let rootVC = storyboard.instantiateInitialViewController() as! UINavigationController
+        
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window?.rootViewController = rootVC
+        window?.makeKeyAndVisible()
+        
         return true
     }
     
