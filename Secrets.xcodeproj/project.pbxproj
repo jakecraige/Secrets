@@ -40,6 +40,7 @@
 		E7D59F4E1AD8799500ECB484 /* SecretsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D59F4D1AD8799500ECB484 /* SecretsTableViewController.swift */; };
 		E7D59F501AD87C8F00ECB484 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D59F4F1AD87C8F00ECB484 /* AuthenticationViewController.swift */; };
 		E7D59F521AD87D3A00ECB484 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D59F511AD87D3A00ECB484 /* WelcomeViewController.swift */; };
+		E7D59F541AD8821400ECB484 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D59F531AD8821400ECB484 /* Secret.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 		E7D59F4D1AD8799500ECB484 /* SecretsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecretsTableViewController.swift; path = ViewControllers/SecretsTableViewController.swift; sourceTree = "<group>"; };
 		E7D59F4F1AD87C8F00ECB484 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthenticationViewController.swift; path = ViewControllers/AuthenticationViewController.swift; sourceTree = "<group>"; };
 		E7D59F511AD87D3A00ECB484 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = ViewControllers/WelcomeViewController.swift; sourceTree = "<group>"; };
+		E7D59F531AD8821400ECB484 /* Secret.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				E7D59F471AD8489700ECB484 /* UserAuthenticator.swift */,
+				E7D59F531AD8821400ECB484 /* Secret.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 				E7D59F421AD8428000ECB484 /* SignUpViewController.swift in Sources */,
 				E7D59F521AD87D3A00ECB484 /* WelcomeViewController.swift in Sources */,
 				E7D59F501AD87C8F00ECB484 /* AuthenticationViewController.swift in Sources */,
+				E7D59F541AD8821400ECB484 /* Secret.swift in Sources */,
 				74AEE5CFB36603A65F62C9D7 /* Main.storyboard in Sources */,
 				200FD855D82021E68500E1EA /* LaunchScreen.xib in Sources */,
 				E7D59F441AD8428F00ECB484 /* SignInViewController.swift in Sources */,
