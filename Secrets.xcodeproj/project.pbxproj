@@ -12,7 +12,6 @@
 		82205F9840595A24D8D0ED45 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18A5BC68909FC89C632C465E /* Images.xcassets */; };
 		C2D074A6E528C83C3DA916FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1C92C7FCD24124E06A0C55 /* AppDelegate.swift */; };
 		D9567208177D66BC1F4D50BD /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 29ABAF428C826AD4E083FA01 /* Settings.bundle */; };
-		E747E9A01AD6D5920049018E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747E99F1AD6D5920049018E /* HomeViewController.swift */; };
 		E747E9A51AD6D60B0049018E /* LlamaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E747E9A11AD6D60B0049018E /* LlamaKit.framework */; };
 		E747E9A81AD6D60B0049018E /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E747E9A41AD6D60B0049018E /* Runes.framework */; };
 		E747E9AD1AD6D7940049018E /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E747E9AC1AD6D7940049018E /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -35,10 +34,12 @@
 		E747E9D21AD824EA0049018E /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E747E9D01AD824EA0049018E /* Bolts.framework */; };
 		E747E9D31AD824EA0049018E /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E747E9D11AD824EA0049018E /* Parse.framework */; };
 		E7D59F3E1AD8384500ECB484 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D59F3D1AD8384500ECB484 /* Authentication.storyboard */; };
-		E7D59F401AD83EE400ECB484 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D59F3F1AD83EE400ECB484 /* WelcomeViewController.swift */; };
 		E7D59F421AD8428000ECB484 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D59F411AD8428000ECB484 /* SignUpViewController.swift */; };
 		E7D59F441AD8428F00ECB484 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D59F431AD8428F00ECB484 /* SignInViewController.swift */; };
 		E7D59F481AD8489700ECB484 /* UserAuthenticator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D59F471AD8489700ECB484 /* UserAuthenticator.swift */; };
+		E7D59F4E1AD8799500ECB484 /* SecretsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D59F4D1AD8799500ECB484 /* SecretsTableViewController.swift */; };
+		E7D59F501AD87C8F00ECB484 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D59F4F1AD87C8F00ECB484 /* AuthenticationViewController.swift */; };
+		E7D59F521AD87D3A00ECB484 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D59F511AD87D3A00ECB484 /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,7 +77,6 @@
 		CB1C92C7FCD24124E06A0C55 /* AppDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2149DDCBE1171E41A64A252 /* LaunchScreen.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		E2EB23E3AD3357C96CE6FAD3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		E747E99F1AD6D5920049018E /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ViewControllers/HomeViewController.swift; sourceTree = "<group>"; };
 		E747E9A11AD6D60B0049018E /* LlamaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LlamaKit.framework; path = Carthage/Build/iOS/LlamaKit.framework; sourceTree = "<group>"; };
 		E747E9A41AD6D60B0049018E /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = Carthage/Build/iOS/Runes.framework; sourceTree = "<group>"; };
 		E747E9AC1AD6D7940049018E /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = ../Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
@@ -97,10 +97,12 @@
 		E747E9D01AD824EA0049018E /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Secrets/Frameworks/Bolts.framework; sourceTree = "<group>"; };
 		E747E9D11AD824EA0049018E /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Secrets/Frameworks/Parse.framework; sourceTree = "<group>"; };
 		E7D59F3D1AD8384500ECB484 /* Authentication.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
-		E7D59F3F1AD83EE400ECB484 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = ViewControllers/WelcomeViewController.swift; sourceTree = "<group>"; };
 		E7D59F411AD8428000ECB484 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = ViewControllers/SignUpViewController.swift; sourceTree = "<group>"; };
 		E7D59F431AD8428F00ECB484 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = ViewControllers/SignInViewController.swift; sourceTree = "<group>"; };
 		E7D59F471AD8489700ECB484 /* UserAuthenticator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserAuthenticator.swift; sourceTree = "<group>"; };
+		E7D59F4D1AD8799500ECB484 /* SecretsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SecretsTableViewController.swift; path = ViewControllers/SecretsTableViewController.swift; sourceTree = "<group>"; };
+		E7D59F4F1AD87C8F00ECB484 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthenticationViewController.swift; path = ViewControllers/AuthenticationViewController.swift; sourceTree = "<group>"; };
+		E7D59F511AD87D3A00ECB484 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = ViewControllers/WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -295,10 +297,11 @@
 		E747E99E1AD6D56E0049018E /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				E747E99F1AD6D5920049018E /* HomeViewController.swift */,
-				E7D59F3F1AD83EE400ECB484 /* WelcomeViewController.swift */,
+				E7D59F511AD87D3A00ECB484 /* WelcomeViewController.swift */,
 				E7D59F411AD8428000ECB484 /* SignUpViewController.swift */,
 				E7D59F431AD8428F00ECB484 /* SignInViewController.swift */,
+				E7D59F4D1AD8799500ECB484 /* SecretsTableViewController.swift */,
+				E7D59F4F1AD87C8F00ECB484 /* AuthenticationViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -499,12 +502,13 @@
 			files = (
 				C2D074A6E528C83C3DA916FE /* AppDelegate.swift in Sources */,
 				E7D59F421AD8428000ECB484 /* SignUpViewController.swift in Sources */,
+				E7D59F521AD87D3A00ECB484 /* WelcomeViewController.swift in Sources */,
+				E7D59F501AD87C8F00ECB484 /* AuthenticationViewController.swift in Sources */,
 				74AEE5CFB36603A65F62C9D7 /* Main.storyboard in Sources */,
 				200FD855D82021E68500E1EA /* LaunchScreen.xib in Sources */,
 				E7D59F441AD8428F00ECB484 /* SignInViewController.swift in Sources */,
-				E7D59F401AD83EE400ECB484 /* WelcomeViewController.swift in Sources */,
+				E7D59F4E1AD8799500ECB484 /* SecretsTableViewController.swift in Sources */,
 				E7D59F481AD8489700ECB484 /* UserAuthenticator.swift in Sources */,
-				E747E9A01AD6D5920049018E /* HomeViewController.swift in Sources */,
 				E747E9CF1AD8204C0049018E /* Keys.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

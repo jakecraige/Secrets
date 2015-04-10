@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignInViewController: UIViewController, UITextFieldDelegate {
+class SignInViewController: AuthenticationViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
@@ -19,9 +19,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     func signIn() {
         UserAuthenticator.signIn(emailTextField.text, password: passwordTextField.text) { result in
             switch result {
-            case .Success:
-                let message = "Logged in as \(result.value?.username)"
-                self.alertWithTitle("Success!", message: message)
+            case .Success: self.presentMainFlow()
             case .Failure:
                 let message = result.error?.userInfo?["error"] as? String
                 self.alertWithTitle("Error", message: message)
@@ -29,20 +27,15 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func alertWithTitle(title: String, message: String?) {
-        let errorMessage = message ?? "An unknown error has occured"
-        UIAlertView(title: title, message: errorMessage, delegate: nil, cancelButtonTitle: "OK").show()
-    }
-    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-        
+
         switch textField {
         case emailTextField: passwordTextField.becomeFirstResponder()
         case passwordTextField: signIn()
         default: break
         }
-        
+
         return true
     }
 }

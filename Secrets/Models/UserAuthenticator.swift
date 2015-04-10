@@ -33,4 +33,8 @@ class UserAuthenticator {
             }
         }
     }
+
+    class func signOut() {
+        PFUser.logOut()
+    }
 }

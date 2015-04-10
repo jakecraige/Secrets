@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController, UITextFieldDelegate {
+class SignUpViewController: AuthenticationViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
@@ -22,7 +22,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
         UserAuthenticator.signUp(email, password: password) { result in
             switch result {
-            case .Success: self.alertWithTitle("Success", message: "You signed up!")
+            case .Success: self.presentMainFlow()
             case .Failure:
                 let errorMessage = result.error?.userInfo?["error"] as? String
                 self.alertWithTitle("Error", message: errorMessage)
@@ -38,12 +38,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         case passwordTextField: signUp()
         default: break
         }
-        
+  
         return true
-    }
-    
-    func alertWithTitle(title: String, message: String?) {
-        let errorMessage = message ?? "An unknown error has occured"
-        UIAlertView(title: title, message: errorMessage, delegate: nil, cancelButtonTitle: "OK").show()
     }
 }
