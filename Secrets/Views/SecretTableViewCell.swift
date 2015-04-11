@@ -12,11 +12,42 @@ import Parse
 class SecretTableViewCell: UITableViewCell {
     @IBOutlet weak var bodyTextView: UITextView!
     @IBOutlet weak var createdAtLabel: UILabel!
+    @IBOutlet weak var heartsButton: UIButton!
     
-    func configureWithSecret(secret: PFObject) {
-        bodyTextView.text = secret["body"] as? String
-        let date = NSDateFormatter.localizedStringFromDate(secret.createdAt!, dateStyle: NSDateFormatterStyle.ShortStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
-        createdAtLabel.text = date
+    var secret: Secret?
+    
+    let heartIcon = String.fontAwesomeIconWithName(.Heart)
+    var heartsString: String {
+        if let hearts = secret?.hearts {
+            if hearts > 0 {
+                return "\(secret!.hearts) \(heartIcon)"
+            }
+        }
+        return heartIcon
     }
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        heartsButton.titleLabel?.font = UIFont.fontAwesomeOfSize(15)
+        heartsButton.titleLabel?.text = nil
+    }
+    
+    func configureWithSecret(newSecret: Secret) {
+        secret = newSecret
+        updateUI()
+    }
+    
+    func updateUI() {
+        bodyTextView.text = secret?.body
+        createdAtLabel.text = secret?.createdAt?.timeAgo()
+        
+        heartsButton.setTitle(heartsString, forState: UIControlState.Normal)
+    }
+    
+    @IBAction func heartSecret() {
+        secret?.addHeart()
+        secret?.saveEventually()
+        updateUI()
+    }
 }

@@ -33,6 +33,9 @@
 		E747E9CF1AD8204C0049018E /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747E9CE1AD8204C0049018E /* Keys.swift */; };
 		E747E9D21AD824EA0049018E /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E747E9D01AD824EA0049018E /* Bolts.framework */; };
 		E747E9D31AD824EA0049018E /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E747E9D11AD824EA0049018E /* Parse.framework */; };
+		E7AEDF741AD89D9C00C1A54F /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AEDF731AD89D9C00C1A54F /* NSDate.swift */; };
+		E7AEDF781AD8A58800C1A54F /* FontAwesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AEDF771AD8A58800C1A54F /* FontAwesome.swift */; };
+		E7AEDF791AD8A74B00C1A54F /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = E7AEDF761AD8A56000C1A54F /* FontAwesome.otf */; };
 		E7D59F3E1AD8384500ECB484 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D59F3D1AD8384500ECB484 /* Authentication.storyboard */; };
 		E7D59F421AD8428000ECB484 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D59F411AD8428000ECB484 /* SignUpViewController.swift */; };
 		E7D59F441AD8428F00ECB484 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D59F431AD8428F00ECB484 /* SignInViewController.swift */; };
@@ -98,6 +101,9 @@
 		E747E9CE1AD8204C0049018E /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		E747E9D01AD824EA0049018E /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Secrets/Frameworks/Bolts.framework; sourceTree = "<group>"; };
 		E747E9D11AD824EA0049018E /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Secrets/Frameworks/Parse.framework; sourceTree = "<group>"; };
+		E7AEDF731AD89D9C00C1A54F /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
+		E7AEDF761AD8A56000C1A54F /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
+		E7AEDF771AD8A58800C1A54F /* FontAwesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesome.swift; sourceTree = "<group>"; };
 		E7D59F3D1AD8384500ECB484 /* Authentication.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		E7D59F411AD8428000ECB484 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = ViewControllers/SignUpViewController.swift; sourceTree = "<group>"; };
 		E7D59F431AD8428F00ECB484 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = ViewControllers/SignInViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +186,7 @@
 		6ECB37A82C0F29AF5C9F7000 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				E7AEDF751AD8A55100C1A54F /* Fonts */,
 				18A5BC68909FC89C632C465E /* Images.xcassets */,
 				F4AA4FC4EE170FC82B00037E /* Storyboards */,
 				80D938386E8766396FCBEC32 /* Nibs */,
@@ -321,6 +328,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E7AEDF751AD8A55100C1A54F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				E7AEDF761AD8A56000C1A54F /* FontAwesome.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
 		F1BF3ED2ED5DB2139FBF436A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -341,6 +356,8 @@
 		F769C6A0E7939139AAB1D538 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				E7AEDF731AD89D9C00C1A54F /* NSDate.swift */,
+				E7AEDF771AD8A58800C1A54F /* FontAwesome.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -442,6 +459,7 @@
 				82205F9840595A24D8D0ED45 /* Images.xcassets in Resources */,
 				D9567208177D66BC1F4D50BD /* Settings.bundle in Resources */,
 				E7D59F3E1AD8384500ECB484 /* Authentication.storyboard in Resources */,
+				E7AEDF791AD8A74B00C1A54F /* FontAwesome.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,7 +534,9 @@
 				200FD855D82021E68500E1EA /* LaunchScreen.xib in Sources */,
 				E7D59F441AD8428F00ECB484 /* SignInViewController.swift in Sources */,
 				E7D59F4E1AD8799500ECB484 /* SecretsTableViewController.swift in Sources */,
+				E7AEDF741AD89D9C00C1A54F /* NSDate.swift in Sources */,
 				E7D59F481AD8489700ECB484 /* UserAuthenticator.swift in Sources */,
+				E7AEDF781AD8A58800C1A54F /* FontAwesome.swift in Sources */,
 				E747E9CF1AD8204C0049018E /* Keys.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

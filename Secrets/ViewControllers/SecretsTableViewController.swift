@@ -10,7 +10,7 @@ import UIKit
 import Parse
 
 class SecretsTableViewController: UITableViewController {
-    var secrets: [PFObject] = [] {
+    var secrets: [Secret] = [] {
         didSet {
             tableView.reloadData()
         }
