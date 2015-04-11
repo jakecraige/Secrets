@@ -41,6 +41,7 @@
 		E7D59F501AD87C8F00ECB484 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D59F4F1AD87C8F00ECB484 /* AuthenticationViewController.swift */; };
 		E7D59F521AD87D3A00ECB484 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D59F511AD87D3A00ECB484 /* WelcomeViewController.swift */; };
 		E7D59F541AD8821400ECB484 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D59F531AD8821400ECB484 /* Secret.swift */; };
+		E7D59F591AD88EA900ECB484 /* SecretTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D59F571AD88EA900ECB484 /* SecretTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +106,7 @@
 		E7D59F4F1AD87C8F00ECB484 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthenticationViewController.swift; path = ViewControllers/AuthenticationViewController.swift; sourceTree = "<group>"; };
 		E7D59F511AD87D3A00ECB484 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = ViewControllers/WelcomeViewController.swift; sourceTree = "<group>"; };
 		E7D59F531AD8821400ECB484 /* Secret.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
+		E7D59F571AD88EA900ECB484 /* SecretTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecretTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -293,6 +295,7 @@
 		D8126EAFBEA07B5DEDB44C6C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E7D59F571AD88EA900ECB484 /* SecretTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -504,6 +507,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2D074A6E528C83C3DA916FE /* AppDelegate.swift in Sources */,
+				E7D59F591AD88EA900ECB484 /* SecretTableViewCell.swift in Sources */,
 				E7D59F421AD8428000ECB484 /* SignUpViewController.swift in Sources */,
 				E7D59F521AD87D3A00ECB484 /* WelcomeViewController.swift in Sources */,
 				E7D59F501AD87C8F00ECB484 /* AuthenticationViewController.swift in Sources */,

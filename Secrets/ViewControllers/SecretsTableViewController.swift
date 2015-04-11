@@ -65,9 +65,9 @@ class SecretsTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(SB.cellIdentifier) as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(SB.cellIdentifier) as! SecretTableViewCell
         let secret = secrets[indexPath.row]
-        cell.textLabel?.text = secret["body"] as? String
+        cell.configureWithSecret(secret)
         return cell
     }
     
