@@ -25,6 +25,14 @@ class Secret {
         }
     }
     
+    class func createWithBodyInBackgroundWithBlock(body: String, block: Result<Secret, NSError> -> Void) {
+        var newSecret = PFObject(className: "Secret")
+        newSecret["body"] = body
+        let secret = Secret(object: newSecret)
+        
+        secret.saveInBackgroundWithBlock(block)
+    }
+    
     let object: PFObject
     
     init(object: PFObject) {
@@ -50,4 +58,13 @@ class Secret {
         object.saveEventually()
     }
     
+    func saveInBackgroundWithBlock(block: Result<Secret, NSError> -> Void) {
+        object.saveInBackgroundWithBlock() { (succeeded: Bool, error: NSError?) in
+            if let err = error {
+                block(failure(err))
+            } else {
+                block(success(self))
+            }
+        }
+    }
 }

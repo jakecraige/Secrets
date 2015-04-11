@@ -36,6 +36,7 @@
 		E7AEDF741AD89D9C00C1A54F /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AEDF731AD89D9C00C1A54F /* NSDate.swift */; };
 		E7AEDF781AD8A58800C1A54F /* FontAwesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AEDF771AD8A58800C1A54F /* FontAwesome.swift */; };
 		E7AEDF791AD8A74B00C1A54F /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = E7AEDF761AD8A56000C1A54F /* FontAwesome.otf */; };
+		E7AEDF7B1AD8B67200C1A54F /* CreateSecretViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AEDF7A1AD8B67200C1A54F /* CreateSecretViewController.swift */; };
 		E7D59F3E1AD8384500ECB484 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D59F3D1AD8384500ECB484 /* Authentication.storyboard */; };
 		E7D59F421AD8428000ECB484 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D59F411AD8428000ECB484 /* SignUpViewController.swift */; };
 		E7D59F441AD8428F00ECB484 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D59F431AD8428F00ECB484 /* SignInViewController.swift */; };
@@ -104,6 +105,7 @@
 		E7AEDF731AD89D9C00C1A54F /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
 		E7AEDF761AD8A56000C1A54F /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
 		E7AEDF771AD8A58800C1A54F /* FontAwesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesome.swift; sourceTree = "<group>"; };
+		E7AEDF7A1AD8B67200C1A54F /* CreateSecretViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateSecretViewController.swift; path = ViewControllers/CreateSecretViewController.swift; sourceTree = "<group>"; };
 		E7D59F3D1AD8384500ECB484 /* Authentication.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		E7D59F411AD8428000ECB484 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = ViewControllers/SignUpViewController.swift; sourceTree = "<group>"; };
 		E7D59F431AD8428F00ECB484 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = ViewControllers/SignInViewController.swift; sourceTree = "<group>"; };
@@ -315,6 +317,7 @@
 				E7D59F431AD8428F00ECB484 /* SignInViewController.swift */,
 				E7D59F4D1AD8799500ECB484 /* SecretsTableViewController.swift */,
 				E7D59F4F1AD87C8F00ECB484 /* AuthenticationViewController.swift */,
+				E7AEDF7A1AD8B67200C1A54F /* CreateSecretViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -533,6 +536,7 @@
 				74AEE5CFB36603A65F62C9D7 /* Main.storyboard in Sources */,
 				200FD855D82021E68500E1EA /* LaunchScreen.xib in Sources */,
 				E7D59F441AD8428F00ECB484 /* SignInViewController.swift in Sources */,
+				E7AEDF7B1AD8B67200C1A54F /* CreateSecretViewController.swift in Sources */,
 				E7D59F4E1AD8799500ECB484 /* SecretsTableViewController.swift in Sources */,
 				E7AEDF741AD89D9C00C1A54F /* NSDate.swift in Sources */,
 				E7D59F481AD8489700ECB484 /* UserAuthenticator.swift in Sources */,

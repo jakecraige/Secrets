@@ -53,7 +53,6 @@ class SecretsTableViewController: UITableViewController {
         }
     }
     
-    
     // MARK: TableViewDataSourceDelegate
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
