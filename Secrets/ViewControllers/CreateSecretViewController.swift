@@ -26,9 +26,8 @@ class CreateSecretViewController: UIViewController, UITextViewDelegate {
         UINavigationBar.appearance().barTintColor = UIColor.redColor()
     }
     
-    
     @IBAction func cancel(sender: UIBarButtonItem?) {
-        dismissViewControllerAnimated(true, completion: nil)
+        presentingViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func createSecret(sender: UIBarButtonItem) {
