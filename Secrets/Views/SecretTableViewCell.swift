@@ -2,15 +2,14 @@
 //  SecretTableViewCell.swift
 //  Secrets
 //
-//  Created by James Craige on 4/10/15.
+//  Created by James Craige on 4/17/15.
 //  Copyright (c) 2015 thoughtbot. All rights reserved.
 //
 
 import UIKit
-import Parse
 
 class SecretTableViewCell: UITableViewCell {
-    @IBOutlet weak var bodyTextView: UITextView!
+    @IBOutlet weak var bodyLabel: UILabel!
     @IBOutlet weak var createdAtLabel: UILabel!
     @IBOutlet weak var heartsButton: UIButton!
     
@@ -21,6 +20,7 @@ class SecretTableViewCell: UITableViewCell {
         
         heartsButton.titleLabel?.font = UIFont.fontAwesomeOfSize(15)
         heartsButton.titleLabel?.text = nil
+        bodyLabel.sizeToFit()
     }
     
     func configureWithSecret(secret: Secret) {
@@ -29,15 +29,16 @@ class SecretTableViewCell: UITableViewCell {
     }
     
     func updateUI() {
-        bodyTextView.text = viewModel?.body
+        bodyLabel.text = viewModel?.body
         createdAtLabel.text = viewModel?.createdTimeAgo
         
         heartsButton.setTitle(viewModel?.heartsString, forState: UIControlState.Normal)
     }
     
-    @IBAction func heartSecret() {
+    @IBAction func heartSecret(sender: UIButton) {
         viewModel?.secret.addHeart()
         viewModel?.secret.saveEventually()
         updateUI()
     }
+    
 }

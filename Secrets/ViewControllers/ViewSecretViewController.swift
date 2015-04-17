@@ -8,11 +8,8 @@
 
 import UIKit
 
-class ViewSecretViewController: UIViewController {
-    @IBOutlet weak var textView: UITextView!
-    @IBOutlet weak var timeAgoLabel: UILabel!
-    @IBOutlet weak var heartsButton: UIButton!
-    @IBOutlet weak var scrollView: UIScrollView!
+class ViewSecretViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    @IBOutlet weak var tableView: UITableView!
     
     var viewModel: SecretViewModel?
     
@@ -20,22 +17,44 @@ class ViewSecretViewController: UIViewController {
         viewModel = SecretViewModel(secret: secret)
     }
     
+    struct Constants {
+        static let SecretCellIdentifier = "Secret Cell"
+        static let CommentCellIdentifier = "Comment Cell"
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        heartsButton.titleLabel?.font = UIFont.fontAwesomeOfSize(15)
-        heartsButton.titleLabel?.text = nil
-        updateUI()
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.registerNib(UINib(nibName: "SecretTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: Constants.SecretCellIdentifier)
     }
     
-    func updateUI() {
-        textView.text = viewModel?.body
-        timeAgoLabel.text = viewModel?.createdTimeAgo
-        heartsButton.setTitle(viewModel?.heartsString, forState: UIControlState.Normal)
+    let comments = [
+        ["body": "Something"]
+    ]
+    
+    // MARK: UITableViewDataSource
+
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
     }
     
-    @IBAction func addHeart(sender: UIButton) {
-        viewModel?.secret.addHeart()
-        viewModel?.secret.saveEventually()
-        updateUI()
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 20
+    }
+    
+    // MARK: UITableViewDelegate
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.SecretCellIdentifier) as! SecretTableViewCell
+            cell.userInteractionEnabled = false
+            if let secret = viewModel?.secret {
+                cell.configureWithSecret(viewModel!.secret)
+            }
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCellWithIdentifier(Constants.CommentCellIdentifier) as! CommentTableViewCell
+            return cell
+        }
     }
 }

@@ -16,12 +16,15 @@ class SecretsTableViewController: UITableViewController {
     }
     
     private struct Constants {
-        static let CellIdentifier = "SecretCell"
+        static let CellIdentifier = "Secret Cell"
         static let ViewSecretIdentifier = "View Secret"
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.registerNib(UINib(nibName: "SecretTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: Constants.CellIdentifier)
         
         refreshControl = UIRefreshControl()
         refreshControl?.addTarget(self, action: "loadSecrets", forControlEvents: UIControlEvents.ValueChanged)
