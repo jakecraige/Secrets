@@ -46,6 +46,8 @@
 		E7D59F521AD87D3A00ECB484 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D59F511AD87D3A00ECB484 /* WelcomeViewController.swift */; };
 		E7D59F541AD8821400ECB484 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D59F531AD8821400ECB484 /* Secret.swift */; };
 		E7D59F591AD88EA900ECB484 /* SecretTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D59F571AD88EA900ECB484 /* SecretTableViewCell.swift */; };
+		E7F5E52C1AE165A200C812E8 /* ViewSecretViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F5E52B1AE165A200C812E8 /* ViewSecretViewController.swift */; };
+		E7F5E52E1AE1674F00C812E8 /* SecretViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F5E52D1AE1674F00C812E8 /* SecretViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +117,8 @@
 		E7D59F511AD87D3A00ECB484 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = ViewControllers/WelcomeViewController.swift; sourceTree = "<group>"; };
 		E7D59F531AD8821400ECB484 /* Secret.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		E7D59F571AD88EA900ECB484 /* SecretTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecretTableViewCell.swift; sourceTree = "<group>"; };
+		E7F5E52B1AE165A200C812E8 /* ViewSecretViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewSecretViewController.swift; path = ViewControllers/ViewSecretViewController.swift; sourceTree = "<group>"; };
+		E7F5E52D1AE1674F00C812E8 /* SecretViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecretViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -318,6 +322,7 @@
 				E7D59F4D1AD8799500ECB484 /* SecretsTableViewController.swift */,
 				E7D59F4F1AD87C8F00ECB484 /* AuthenticationViewController.swift */,
 				E7AEDF7A1AD8B67200C1A54F /* CreateSecretViewController.swift */,
+				E7F5E52B1AE165A200C812E8 /* ViewSecretViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -368,6 +373,7 @@
 		FCC39B0F61D57B0CAB241D14 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				E7F5E52D1AE1674F00C812E8 /* SecretViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -528,6 +534,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2D074A6E528C83C3DA916FE /* AppDelegate.swift in Sources */,
+				E7F5E52E1AE1674F00C812E8 /* SecretViewModel.swift in Sources */,
 				E7D59F591AD88EA900ECB484 /* SecretTableViewCell.swift in Sources */,
 				E7D59F421AD8428000ECB484 /* SignUpViewController.swift in Sources */,
 				E7D59F521AD87D3A00ECB484 /* WelcomeViewController.swift in Sources */,
@@ -536,6 +543,7 @@
 				74AEE5CFB36603A65F62C9D7 /* Main.storyboard in Sources */,
 				200FD855D82021E68500E1EA /* LaunchScreen.xib in Sources */,
 				E7D59F441AD8428F00ECB484 /* SignInViewController.swift in Sources */,
+				E7F5E52C1AE165A200C812E8 /* ViewSecretViewController.swift in Sources */,
 				E7AEDF7B1AD8B67200C1A54F /* CreateSecretViewController.swift in Sources */,
 				E7D59F4E1AD8799500ECB484 /* SecretsTableViewController.swift in Sources */,
 				E7AEDF741AD89D9C00C1A54F /* NSDate.swift in Sources */,

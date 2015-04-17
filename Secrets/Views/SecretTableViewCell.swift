@@ -14,17 +14,7 @@ class SecretTableViewCell: UITableViewCell {
     @IBOutlet weak var createdAtLabel: UILabel!
     @IBOutlet weak var heartsButton: UIButton!
     
-    var secret: Secret?
-    
-    let heartIcon = String.fontAwesomeIconWithName(.Heart)
-    var heartsString: String {
-        if let hearts = secret?.hearts {
-            if hearts > 0 {
-                return "\(secret!.hearts) \(heartIcon)"
-            }
-        }
-        return heartIcon
-    }
+    var viewModel: SecretViewModel?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,21 +23,21 @@ class SecretTableViewCell: UITableViewCell {
         heartsButton.titleLabel?.text = nil
     }
     
-    func configureWithSecret(newSecret: Secret) {
-        secret = newSecret
+    func configureWithSecret(secret: Secret) {
+        viewModel = SecretViewModel(secret: secret)
         updateUI()
     }
     
     func updateUI() {
-        bodyTextView.text = secret?.body
-        createdAtLabel.text = secret?.createdAt?.timeAgo()
+        bodyTextView.text = viewModel?.body
+        createdAtLabel.text = viewModel?.createdTimeAgo
         
-        heartsButton.setTitle(heartsString, forState: UIControlState.Normal)
+        heartsButton.setTitle(viewModel?.heartsString, forState: UIControlState.Normal)
     }
     
     @IBAction func heartSecret() {
-        secret?.addHeart()
-        secret?.saveEventually()
+        viewModel?.secret.addHeart()
+        viewModel?.secret.saveEventually()
         updateUI()
     }
 }

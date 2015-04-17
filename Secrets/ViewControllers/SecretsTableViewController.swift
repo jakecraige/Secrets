@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Parse
 
 class SecretsTableViewController: UITableViewController {
     var secrets: [Secret] = [] {
@@ -16,8 +15,9 @@ class SecretsTableViewController: UITableViewController {
         }
     }
     
-    private struct SB {
-        static let cellIdentifier = "SecretCell"
+    private struct Constants {
+        static let CellIdentifier = "SecretCell"
+        static let ViewSecretIdentifier = "View Secret"
     }
     
     override func viewDidLoad() {
@@ -29,6 +29,7 @@ class SecretsTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        
         loadSecrets()
     }
     
@@ -53,6 +54,15 @@ class SecretsTableViewController: UITableViewController {
         }
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == Constants.ViewSecretIdentifier {
+            if let vc = segue.destinationViewController as? ViewSecretViewController, indexPath = sender as? NSIndexPath {
+                let secret = secrets[indexPath.row]
+                vc.setupWithSecret(secret)
+            }
+        }
+    }
+    
     // MARK: TableViewDataSourceDelegate
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -64,11 +74,13 @@ class SecretsTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(SB.cellIdentifier) as! SecretTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(Constants.CellIdentifier) as! SecretTableViewCell
         let secret = secrets[indexPath.row]
         cell.configureWithSecret(secret)
         return cell
     }
     
-    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        performSegueWithIdentifier(Constants.ViewSecretIdentifier, sender: indexPath)
+    }
 }
