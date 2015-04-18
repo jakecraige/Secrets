@@ -17,13 +17,11 @@ class SignInViewController: AuthenticationViewController, UITextFieldDelegate {
     }
     
     func signIn() {
-        UserAuthenticator.signIn(emailTextField.text, password: passwordTextField.text) { result in
-            switch result {
-            case .Success: self.presentMainFlow()
-            case .Failure:
-                let message = result.error?.userInfo?["error"] as? String
-                self.alertWithTitle("Error", message: message)
-            }
+        UserAuthenticator.signIn(emailTextField.text, password: passwordTextField.text).then { result in
+            self.presentMainFlow()
+        }.catch { err -> Void in
+            let message = result.error?.userInfo?["error"] as? String
+            self.alertWithTitle("Error", message: message)
         }
     }
     

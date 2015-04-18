@@ -23,7 +23,6 @@
 		E747E9BD1AD6D94D0049018E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E747E9BC1AD6D94D0049018E /* QuartzCore.framework */; };
 		E747E9BF1AD6D9580049018E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E747E9BE1AD6D9580049018E /* MobileCoreServices.framework */; };
 		E747E9C11AD6D9650049018E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E747E9C01AD6D9650049018E /* Security.framework */; };
-		E747E9C31AD6D96C0049018E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E747E9C21AD6D96C0049018E /* StoreKit.framework */; };
 		E747E9C51AD6D9740049018E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E747E9C41AD6D9740049018E /* SystemConfiguration.framework */; };
 		E747E9C71AD6D97C0049018E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E747E9C61AD6D97C0049018E /* libz.dylib */; };
 		E747E9C91AD6D9840049018E /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E747E9C81AD6D9840049018E /* libsqlite3.dylib */; };
@@ -33,10 +32,18 @@
 		E747E9CF1AD8204C0049018E /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E747E9CE1AD8204C0049018E /* Keys.swift */; };
 		E747E9D21AD824EA0049018E /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E747E9D01AD824EA0049018E /* Bolts.framework */; };
 		E747E9D31AD824EA0049018E /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E747E9D11AD824EA0049018E /* Parse.framework */; };
+		E74FCE691AE1CC2C0040E818 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E74FCE681AE1CC2C0040E818 /* Social.framework */; };
+		E74FCE6B1AE1CC430040E818 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E74FCE6A1AE1CC430040E818 /* Accounts.framework */; };
+		E79190141AE1F9B3002B5B7B /* OMGHTTPURLRQ.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E79190121AE1F9B3002B5B7B /* OMGHTTPURLRQ.framework */; };
+		E79190151AE1F9B3002B5B7B /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E79190131AE1F9B3002B5B7B /* PromiseKit.framework */; };
+		E79190191AE201C0002B5B7B /* PFObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E79190181AE201C0002B5B7B /* PFObject.swift */; };
 		E7AEDF741AD89D9C00C1A54F /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AEDF731AD89D9C00C1A54F /* NSDate.swift */; };
 		E7AEDF781AD8A58800C1A54F /* FontAwesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AEDF771AD8A58800C1A54F /* FontAwesome.swift */; };
 		E7AEDF791AD8A74B00C1A54F /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = E7AEDF761AD8A56000C1A54F /* FontAwesome.otf */; };
 		E7AEDF7B1AD8B67200C1A54F /* CreateSecretViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7AEDF7A1AD8B67200C1A54F /* CreateSecretViewController.swift */; };
+		E7B650111AE1E71E00D1F499 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B650101AE1E71E00D1F499 /* Comment.swift */; };
+		E7B650131AE1E81D00D1F499 /* PFQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B650121AE1E81D00D1F499 /* PFQuery.swift */; };
+		E7B650151AE1E98B00D1F499 /* Modelable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B650141AE1E98B00D1F499 /* Modelable.swift */; };
 		E7D59F3E1AD8384500ECB484 /* Authentication.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7D59F3D1AD8384500ECB484 /* Authentication.storyboard */; };
 		E7D59F421AD8428000ECB484 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D59F411AD8428000ECB484 /* SignUpViewController.swift */; };
 		E7D59F441AD8428F00ECB484 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D59F431AD8428F00ECB484 /* SignInViewController.swift */; };
@@ -45,6 +52,7 @@
 		E7D59F501AD87C8F00ECB484 /* AuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D59F4F1AD87C8F00ECB484 /* AuthenticationViewController.swift */; };
 		E7D59F521AD87D3A00ECB484 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D59F511AD87D3A00ECB484 /* WelcomeViewController.swift */; };
 		E7D59F541AD8821400ECB484 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D59F531AD8821400ECB484 /* Secret.swift */; };
+		E7DC8F4F1AE20831001F8B60 /* PFUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DC8F4E1AE20831001F8B60 /* PFUser.swift */; };
 		E7F5E52C1AE165A200C812E8 /* ViewSecretViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F5E52B1AE165A200C812E8 /* ViewSecretViewController.swift */; };
 		E7F5E52E1AE1674F00C812E8 /* SecretViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F5E52D1AE1674F00C812E8 /* SecretViewModel.swift */; };
 		E7F5E5301AE176CF00C812E8 /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F5E52F1AE176CF00C812E8 /* CommentTableViewCell.swift */; };
@@ -98,7 +106,6 @@
 		E747E9BC1AD6D94D0049018E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E747E9BE1AD6D9580049018E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		E747E9C01AD6D9650049018E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		E747E9C21AD6D96C0049018E /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		E747E9C41AD6D9740049018E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		E747E9C61AD6D97C0049018E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		E747E9C81AD6D9840049018E /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -106,10 +113,20 @@
 		E747E9CE1AD8204C0049018E /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		E747E9D01AD824EA0049018E /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Secrets/Frameworks/Bolts.framework; sourceTree = "<group>"; };
 		E747E9D11AD824EA0049018E /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Secrets/Frameworks/Parse.framework; sourceTree = "<group>"; };
+		E74FCE631AE1CA630040E818 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
+		E74FCE651AE1CA820040E818 /* libReveal.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libReveal.dylib; sourceTree = "<group>"; };
+		E74FCE681AE1CC2C0040E818 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		E74FCE6A1AE1CC430040E818 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		E79190121AE1F9B3002B5B7B /* OMGHTTPURLRQ.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OMGHTTPURLRQ.framework; path = Carthage/Build/iOS/OMGHTTPURLRQ.framework; sourceTree = "<group>"; };
+		E79190131AE1F9B3002B5B7B /* PromiseKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PromiseKit.framework; path = Carthage/Build/iOS/PromiseKit.framework; sourceTree = "<group>"; };
+		E79190181AE201C0002B5B7B /* PFObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PFObject.swift; sourceTree = "<group>"; };
 		E7AEDF731AD89D9C00C1A54F /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
 		E7AEDF761AD8A56000C1A54F /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
 		E7AEDF771AD8A58800C1A54F /* FontAwesome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontAwesome.swift; sourceTree = "<group>"; };
 		E7AEDF7A1AD8B67200C1A54F /* CreateSecretViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateSecretViewController.swift; path = ViewControllers/CreateSecretViewController.swift; sourceTree = "<group>"; };
+		E7B650101AE1E71E00D1F499 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		E7B650121AE1E81D00D1F499 /* PFQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PFQuery.swift; sourceTree = "<group>"; };
+		E7B650141AE1E98B00D1F499 /* Modelable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modelable.swift; sourceTree = "<group>"; };
 		E7D59F3D1AD8384500ECB484 /* Authentication.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		E7D59F411AD8428000ECB484 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = ViewControllers/SignUpViewController.swift; sourceTree = "<group>"; };
 		E7D59F431AD8428F00ECB484 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = ViewControllers/SignInViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +135,7 @@
 		E7D59F4F1AD87C8F00ECB484 /* AuthenticationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthenticationViewController.swift; path = ViewControllers/AuthenticationViewController.swift; sourceTree = "<group>"; };
 		E7D59F511AD87D3A00ECB484 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = ViewControllers/WelcomeViewController.swift; sourceTree = "<group>"; };
 		E7D59F531AD8821400ECB484 /* Secret.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
+		E7DC8F4E1AE20831001F8B60 /* PFUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PFUser.swift; sourceTree = "<group>"; };
 		E7F5E52B1AE165A200C812E8 /* ViewSecretViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewSecretViewController.swift; path = ViewControllers/ViewSecretViewController.swift; sourceTree = "<group>"; };
 		E7F5E52D1AE1674F00C812E8 /* SecretViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecretViewModel.swift; sourceTree = "<group>"; };
 		E7F5E52F1AE176CF00C812E8 /* CommentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
@@ -139,10 +157,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E74FCE6B1AE1CC430040E818 /* Accounts.framework in Frameworks */,
+				E74FCE691AE1CC2C0040E818 /* Social.framework in Frameworks */,
 				E747E9C91AD6D9840049018E /* libsqlite3.dylib in Frameworks */,
 				E747E9C71AD6D97C0049018E /* libz.dylib in Frameworks */,
 				E747E9C51AD6D9740049018E /* SystemConfiguration.framework in Frameworks */,
-				E747E9C31AD6D96C0049018E /* StoreKit.framework in Frameworks */,
 				E747E9C11AD6D9650049018E /* Security.framework in Frameworks */,
 				E747E9BD1AD6D94D0049018E /* QuartzCore.framework in Frameworks */,
 				E747E9BF1AD6D9580049018E /* MobileCoreServices.framework in Frameworks */,
@@ -154,6 +173,8 @@
 				E747E9A81AD6D60B0049018E /* Runes.framework in Frameworks */,
 				E747E9D21AD824EA0049018E /* Bolts.framework in Frameworks */,
 				E747E9D31AD824EA0049018E /* Parse.framework in Frameworks */,
+				E79190141AE1F9B3002B5B7B /* OMGHTTPURLRQ.framework in Frameworks */,
+				E79190151AE1F9B3002B5B7B /* PromiseKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,6 +202,7 @@
 			children = (
 				E7D59F471AD8489700ECB484 /* UserAuthenticator.swift */,
 				E7D59F531AD8821400ECB484 /* Secret.swift */,
+				E7B650101AE1E71E00D1F499 /* Comment.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -209,12 +231,15 @@
 		727A4DBCC4DC351E6D60CA02 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E79190121AE1F9B3002B5B7B /* OMGHTTPURLRQ.framework */,
+				E79190131AE1F9B3002B5B7B /* PromiseKit.framework */,
+				E74FCE651AE1CA820040E818 /* libReveal.dylib */,
+				E74FCE631AE1CA630040E818 /* Reveal.framework */,
 				E747E9C81AD6D9840049018E /* libsqlite3.dylib */,
 				E747E9C61AD6D97C0049018E /* libz.dylib */,
 				E747E9D01AD824EA0049018E /* Bolts.framework */,
 				E747E9D11AD824EA0049018E /* Parse.framework */,
 				E747E9C41AD6D9740049018E /* SystemConfiguration.framework */,
-				E747E9C21AD6D96C0049018E /* StoreKit.framework */,
 				E747E9C01AD6D9650049018E /* Security.framework */,
 				E747E9BE1AD6D9580049018E /* MobileCoreServices.framework */,
 				E747E9BC1AD6D94D0049018E /* QuartzCore.framework */,
@@ -261,6 +286,8 @@
 		A7C60DC4C92EBEB19CA5711E = {
 			isa = PBXGroup;
 			children = (
+				E74FCE6A1AE1CC430040E818 /* Accounts.framework */,
+				E74FCE681AE1CC2C0040E818 /* Social.framework */,
 				BDCD5D5F2D80D2972AC5D75E /* Secrets */,
 				78DDC7674D413ABAFA863E27 /* UnitTests */,
 				2703AE00629F6A0295835047 /* Products */,
@@ -298,6 +325,7 @@
 		C1B4E56B3A8CF93192A7B0B2 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				E7B650141AE1E98B00D1F499 /* Modelable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -372,6 +400,9 @@
 			children = (
 				E7AEDF731AD89D9C00C1A54F /* NSDate.swift */,
 				E7AEDF771AD8A58800C1A54F /* FontAwesome.swift */,
+				E7B650121AE1E81D00D1F499 /* PFQuery.swift */,
+				E79190181AE201C0002B5B7B /* PFObject.swift */,
+				E7DC8F4E1AE20831001F8B60 /* PFUser.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -438,6 +469,11 @@
 				TargetAttributes = {
 					4C50CEF5C97DCD9DE48371F2 = {
 						DevelopmentTeam = 967Y67253P;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -518,6 +554,8 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/LlamaKit.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Runes.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/OMGHTTPURLRQ.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/PromiseKit.framework",
 			);
 			outputPaths = (
 			);
@@ -544,6 +582,7 @@
 				E7F5E52E1AE1674F00C812E8 /* SecretViewModel.swift in Sources */,
 				E7D59F421AD8428000ECB484 /* SignUpViewController.swift in Sources */,
 				E7D59F521AD87D3A00ECB484 /* WelcomeViewController.swift in Sources */,
+				E7B650151AE1E98B00D1F499 /* Modelable.swift in Sources */,
 				E7D59F501AD87C8F00ECB484 /* AuthenticationViewController.swift in Sources */,
 				E7D59F541AD8821400ECB484 /* Secret.swift in Sources */,
 				74AEE5CFB36603A65F62C9D7 /* Main.storyboard in Sources */,
@@ -552,10 +591,14 @@
 				E7F5E52C1AE165A200C812E8 /* ViewSecretViewController.swift in Sources */,
 				E7F5E5351AE1AC2D00C812E8 /* SecretTableViewCell.swift in Sources */,
 				E7AEDF7B1AD8B67200C1A54F /* CreateSecretViewController.swift in Sources */,
+				E7DC8F4F1AE20831001F8B60 /* PFUser.swift in Sources */,
 				E7D59F4E1AD8799500ECB484 /* SecretsTableViewController.swift in Sources */,
+				E79190191AE201C0002B5B7B /* PFObject.swift in Sources */,
 				E7F5E5301AE176CF00C812E8 /* CommentTableViewCell.swift in Sources */,
 				E7AEDF741AD89D9C00C1A54F /* NSDate.swift in Sources */,
 				E7D59F481AD8489700ECB484 /* UserAuthenticator.swift in Sources */,
+				E7B650131AE1E81D00D1F499 /* PFQuery.swift in Sources */,
+				E7B650111AE1E71E00D1F499 /* Comment.swift in Sources */,
 				E7AEDF781AD8A58800C1A54F /* FontAwesome.swift in Sources */,
 				E747E9CF1AD8204C0049018E /* Keys.swift in Sources */,
 			);
@@ -596,6 +639,16 @@
 				INFOPLIST_FILE = "Secrets/Resources/Other-Sources/Info.plist";
 				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lz",
+					"-framework",
+					Reveal,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -620,6 +673,10 @@
 				INFOPLIST_FILE = "Secrets/Resources/Other-Sources/Info.plist";
 				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				OTHER_CFLAGS = (
 					"-DNS_BLOCK_ASSERTIONS=1",
 					"$(inherited)",
@@ -627,6 +684,12 @@
 				OTHER_CPLUSPLUSFLAGS = (
 					"-DNS_BLOCK_ASSERTIONS=1",
 					"$(inherited)",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lz",
+					"-framework",
+					Reveal,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";

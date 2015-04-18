@@ -1,5 +1,5 @@
-github "LlamaKit/LlamaKit" == 0.6.0
 github "thoughtbot/runes" == 1.2.2
+github "mxcl/PromiseKit"
 
 github "Quick/Quick" == 0.3.1
 github "Quick/Nimble" == 0.4.2

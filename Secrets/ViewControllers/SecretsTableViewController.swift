@@ -32,19 +32,16 @@ class SecretsTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
         loadSecrets()
     }
     
     func loadSecrets() {
         refreshControl?.beginRefreshing()
-        Secret.find() { result in
-            switch result {
-            case .Success:
-                self.secrets = result.value!
-            case .Failure: UIAlertView(title: "Error", message: "error", delegate: nil, cancelButtonTitle: "OK")
-            default: break
-            }
+        Secret.find().then { (secrets: [Secret]) -> Void in
+            self.secrets = secrets
+        }.catch { (error: NSError) -> Void in
+            UIAlertView(title: "Error", message: "error", delegate: nil, cancelButtonTitle: "OK")
+        }.finally {
             self.refreshControl?.endRefreshing()
         }
     }

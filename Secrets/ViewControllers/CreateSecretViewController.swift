@@ -31,7 +31,7 @@ class CreateSecretViewController: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func createSecret(sender: UIBarButtonItem) {
-        Secret.createWithBodyInBackgroundWithBlock(bodyTextView.text) { _ in
+        Secret.createWithBody(bodyTextView.text).finally { 
             self.cancel(nil)
         }
     }

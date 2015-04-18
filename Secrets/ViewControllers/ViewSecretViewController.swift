@@ -7,11 +7,18 @@
 //
 
 import UIKit
+import Parse
 
-class ViewSecretViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewSecretViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var newCommentTextField: UITextField!
     
     var viewModel: SecretViewModel?
+    var comments: [Comment] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     func setupWithSecret(secret: Secret) {
         viewModel = SecretViewModel(secret: secret)
@@ -20,6 +27,8 @@ class ViewSecretViewController: UIViewController, UITableViewDataSource, UITable
     struct Constants {
         static let SecretCellIdentifier = "Secret Cell"
         static let CommentCellIdentifier = "Comment Cell"
+        static let KeyboardAnimationDuration = 0.3
+        static let StaticCellsCount = 1
     }
     
     override func viewDidLoad() {
@@ -28,9 +37,29 @@ class ViewSecretViewController: UIViewController, UITableViewDataSource, UITable
         tableView.registerNib(UINib(nibName: "SecretTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: Constants.SecretCellIdentifier)
     }
     
-    let comments = [
-        ["body": "Something"]
-    ]
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        loadComments()
+        registerForKeyboardNotifications()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        deregisterForKeyboardNotifications()
+    }
+    
+    func loadComments() {
+        Comment.whereSecretIs(viewModel!.secret).then { (comments: [Comment]) -> Void in
+            self.comments = comments
+        }
+    }
+    
+    func createComment(text: String) {
+        Comment.createWithBody(text, secret: viewModel!.secret).then { _ -> Void in
+            self.newCommentTextField.text = nil
+            self.loadComments()
+        }
+    }
     
     // MARK: UITableViewDataSource
 
@@ -39,7 +68,7 @@ class ViewSecretViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        return comments.count + Constants.StaticCellsCount
     }
     
     // MARK: UITableViewDelegate
@@ -48,13 +77,66 @@ class ViewSecretViewController: UIViewController, UITableViewDataSource, UITable
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCellWithIdentifier(Constants.SecretCellIdentifier) as! SecretTableViewCell
             cell.userInteractionEnabled = false
-            if let secret = viewModel?.secret {
-                cell.configureWithSecret(viewModel!.secret)
-            }
+            cell.configureWithSecret(viewModel!.secret)
             return cell
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier(Constants.CommentCellIdentifier) as! CommentTableViewCell
+            cell.configureWithComment(comments[indexPath.row - Constants.StaticCellsCount])
             return cell
         }
+    }
+    
+    // MARK: UITextFieldDelegate
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        dismissKeyboard()
+        createComment(textField.text)
+        return true
+    }
+    
+    func dismissKeyboard() {
+        newCommentTextField.resignFirstResponder()
+    }
+    
+    func animateFrame(distance: CGFloat, up: Bool) {
+        let movement = up ? -distance : distance
+        
+        UIView.animateWithDuration(Constants.KeyboardAnimationDuration, animations: {
+            self.view.frame = CGRectOffset(self.view.frame, 0.0, movement)
+        })
+    }
+    
+    // MARK: KeyboardRelated
+    
+    var keyboardTapRecognizer: UITapGestureRecognizer {
+        return UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+    }
+    
+    func registerForKeyboardNotifications() {
+        let center = NSNotificationCenter.defaultCenter()
+        center.addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
+        center.addObserver(self, selector: "keyboardWillBeHidden:", name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    func deregisterForKeyboardNotifications() {
+        let center = NSNotificationCenter.defaultCenter()
+        center.removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
+        center.removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+    }
+    
+    func keyboardWillShow(notification: NSNotification) {
+        println("keyboardwillshow")
+        view.addGestureRecognizer(keyboardTapRecognizer)
+        if let kbSize = notification.userInfo?[UIKeyboardFrameBeginUserInfoKey]?.CGRectValue().size {
+            animateFrame(kbSize.height, up: true)
+        }
+    }
+    
+    func keyboardWillBeHidden(notification: NSNotification) {
+        println("keyboardwillBEHIDDEN")
+        if let kbSize = notification.userInfo?[UIKeyboardFrameBeginUserInfoKey]?.CGRectValue().size {
+            animateFrame(kbSize.height, up: false)
+        }
+        view.removeGestureRecognizer(keyboardTapRecognizer)
     }
 }

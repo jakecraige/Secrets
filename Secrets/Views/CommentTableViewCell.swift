@@ -12,4 +12,8 @@ class CommentTableViewCell: UITableViewCell {
     @IBOutlet weak var userPhotoImageView: UIImageView!
     @IBOutlet weak var commentBodyLabel: UILabel!
     @IBOutlet weak var createdAtLabel: UILabel!
+    
+    func configureWithComment(comment: Comment?) {
+        commentBodyLabel.text = comment?.body
+    }
 }

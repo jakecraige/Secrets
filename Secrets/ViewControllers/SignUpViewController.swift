@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class SignUpViewController: AuthenticationViewController, UITextFieldDelegate {
     @IBOutlet weak var emailTextField: UITextField!
@@ -20,14 +21,24 @@ class SignUpViewController: AuthenticationViewController, UITextFieldDelegate {
         let email = emailTextField.text
         let password = passwordTextField.text
         
-        UserAuthenticator.signUp(email, password: password) { result in
-            switch result {
-            case .Success: self.presentMainFlow()
-            case .Failure:
-                let errorMessage = result.error?.userInfo?["error"] as? String
-                self.alertWithTitle("Error", message: errorMessage)
-            }
+        let onError = { (error: NSError) -> Int in
+            let errorMessage = error.userInfo?["error"] as? String
+            self.alertWithTitle("Error", message: errorMessage)
+            return 1
         }
+        
+        UserAuthenticator.signUp(email, password: password).then { (user: PFUser) in
+            self.presentMainFlow()
+        }.catch(onQueue: dispatch_get_main_queue(), body: onError)
+        
+//        UserAuthenticator.signUp(email, password: password).then { (user: PFUser) -> Void in
+//            self.presentMainFlow()
+//            return;
+//        }.catch { (error: NSError) -> Void in
+//            let errorMessage = result.error?.userInfo?["error"] as? String
+//            self.alertWithTitle("Error", message: errorMessage)
+//            return;
+//        }
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {

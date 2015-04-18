@@ -7,35 +7,24 @@
 //
 
 import Parse
-import LlamaKit
+import PromiseKit
 
-class Secret {
-    class func find(block: Result<[Secret], NSError> -> Void) {
+class Secret: Modelable {
+    class func find() -> Promise<[Secret]> {
         let query = PFQuery(className: "Secret")
         query.orderByDescending("createdAt")
-        query.findObjectsInBackgroundWithBlock() { (objects: [AnyObject]?, error: NSError?) in
-            if let err = error {
-                block(failure(err))
-            } else {
-                if let objects = objects as? [PFObject] {
-                    let secrets = objects.map { Secret(object: $0) }
-                    block(success(secrets))
-                }
-            }
-        }
+        return query.findObjectsInBackgroundPromise()
     }
     
-    class func createWithBodyInBackgroundWithBlock(body: String, block: Result<Secret, NSError> -> Void) {
-        var newSecret = PFObject(className: "Secret")
-        newSecret["body"] = body
-        let secret = Secret(object: newSecret)
-        
-        secret.saveInBackgroundWithBlock(block)
+    class func createWithBody(body: String) -> Promise<Void> {
+        var secret = PFObject(className: "Secret")
+        secret["body"] = body
+        return secret.saveInBackgroundPromise()
     }
     
     let object: PFObject
     
-    init(object: PFObject) {
+    required init(object: PFObject) {
         self.object = object
     }
     
@@ -56,15 +45,5 @@ class Secret {
     
     func saveEventually() {
         object.saveEventually()
-    }
-    
-    func saveInBackgroundWithBlock(block: Result<Secret, NSError> -> Void) {
-        object.saveInBackgroundWithBlock() { (succeeded: Bool, error: NSError?) in
-            if let err = error {
-                block(failure(err))
-            } else {
-                block(success(self))
-            }
-        }
     }
 }

@@ -6,32 +6,19 @@
 //  Copyright (c) 2015 thoughtbot. All rights reserved.
 //
 import Parse
+import PromiseKit
 import LlamaKit
 
-typealias ErrorMessage = String
-
 class UserAuthenticator {
-    class func signUp(email: String, password: String, block: Result<Bool, NSError> -> Void) {
+    class func signUp(email: String, password: String) -> Promise<PFUser> {
         var user = PFUser()
         user.username = email
         user.password = password
-        user.signUpInBackgroundWithBlock() { (succeeded: Bool, error: NSError?) in
-            if let err = error {
-                block(failure(err))
-            } else {
-                block(success(succeeded))
-            }
-        }
+        return user.signUpInBackgroundPromise()
     }
     
-    class func signIn(email: String, password: String, block: Result<PFUser, NSError> -> Void) {
-        PFUser.logInWithUsernameInBackground(email, password: password) { (user: PFUser?, error: NSError?) in
-            if let err = error {
-                block(failure(err))
-            } else {
-                block(success(user!))
-            }
-        }
+    class func signIn(email: String, password: String) -> Promise<PFUser> {
+        return PFUser.logInWithUsernamePromise(email, password: password)
     }
 
     class func signOut() {
