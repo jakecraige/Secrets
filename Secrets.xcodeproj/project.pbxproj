@@ -15,6 +15,7 @@
 		E71F52D81AEAB5B400A12D64 /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71F52D71AEAB5B400A12D64 /* PaddedTextField.swift */; };
 		E71F52DA1AEAC0EA00A12D64 /* CommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71F52D91AEAC0EA00A12D64 /* CommentViewModel.swift */; };
 		E71F52DC1AEAC61500A12D64 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71F52DB1AEAC61500A12D64 /* SettingsTableViewController.swift */; };
+		E71F52DE1AEAD87500A12D64 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71F52DD1AEAD87500A12D64 /* LocationManager.swift */; };
 		E747E9A51AD6D60B0049018E /* LlamaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E747E9A11AD6D60B0049018E /* LlamaKit.framework */; };
 		E747E9A81AD6D60B0049018E /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E747E9A41AD6D60B0049018E /* Runes.framework */; };
 		E747E9AD1AD6D7940049018E /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E747E9AC1AD6D7940049018E /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -101,6 +102,7 @@
 		E71F52D71AEAB5B400A12D64 /* PaddedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddedTextField.swift; sourceTree = "<group>"; };
 		E71F52D91AEAC0EA00A12D64 /* CommentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewModel.swift; sourceTree = "<group>"; };
 		E71F52DB1AEAC61500A12D64 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsTableViewController.swift; path = ViewControllers/SettingsTableViewController.swift; sourceTree = "<group>"; };
+		E71F52DD1AEAD87500A12D64 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		E747E9A11AD6D60B0049018E /* LlamaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LlamaKit.framework; path = Carthage/Build/iOS/LlamaKit.framework; sourceTree = "<group>"; };
 		E747E9A41AD6D60B0049018E /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = Carthage/Build/iOS/Runes.framework; sourceTree = "<group>"; };
 		E747E9AC1AD6D7940049018E /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = ../Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 				E7D59F471AD8489700ECB484 /* UserAuthenticator.swift */,
 				E7D59F531AD8821400ECB484 /* Secret.swift */,
 				E7B650101AE1E71E00D1F499 /* Comment.swift */,
+				E71F52DD1AEAD87500A12D64 /* LocationManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -611,6 +614,7 @@
 				E7B650111AE1E71E00D1F499 /* Comment.swift in Sources */,
 				E7AEDF781AD8A58800C1A54F /* FontAwesome.swift in Sources */,
 				E747E9CF1AD8204C0049018E /* Keys.swift in Sources */,
+				E71F52DE1AEAD87500A12D64 /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import CoreLocation
+import PromiseKit
 
 class SecretsTableViewController: UITableViewController {
     var secrets: [Secret] = [] {
         didSet {
-            tableView.reloadData()
+            if oldValue.count != secrets.count {
+                tableView.reloadData()
+            }
         }
     }
     
@@ -28,22 +32,26 @@ class SecretsTableViewController: UITableViewController {
         tableView.registerNib(UINib(nibName: "SecretTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: Constants.CellIdentifier)
         
         refreshControl = UIRefreshControl()
-        refreshControl?.addTarget(self, action: "loadSecrets", forControlEvents: UIControlEvents.ValueChanged)
+        refreshControl?.addTarget(self, action: "refreshSecrets", forControlEvents: UIControlEvents.ValueChanged)
     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         loadSecrets()
     }
-    
-    func loadSecrets() {
+
+    func refreshSecrets() {
         refreshControl?.beginRefreshing()
-        Secret.find().then { (secrets: [Secret]) -> Void in
+        loadSecrets().finally {
+            self.refreshControl?.endRefreshing()
+        }
+    }
+
+    func loadSecrets() -> Promise<Void> {
+        return Secret.find().then { (secrets: [Secret]) -> Void in
             self.secrets = secrets
         }.catch { (error: NSError) -> Void in
             UIAlertView(title: "Error", message: "error", delegate: nil, cancelButtonTitle: "OK")
-        }.finally {
-            self.refreshControl?.endRefreshing()
         }
     }
 

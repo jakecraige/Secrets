@@ -22,11 +22,19 @@ class SecretViewModel {
     }
     
     var createdTimeAgo: String? {
-        return secret.createdAt?.timeAgo()
+        if let timeAgo = secret.createdAt?.timeAgo() {
+            return "\(neighborhood), \(timeAgo)"
+        } else {
+            return "\(neighborhood)"
+        }
     }
     
     var body: String? {
         return secret.body
+    }
+
+    var neighborhood: String {
+        return secret.neighborhood ?? "Unknown"
     }
     
 }

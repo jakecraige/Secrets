@@ -19,7 +19,12 @@ class Secret: Modelable {
     class func createWithBody(body: String) -> Promise<Void> {
         var secret = PFObject(className: "Secret")
         secret["body"] = body
-        return secret.saveInBackgroundPromise()
+
+        return LocationManager.currentNeighborhood().then { neighborhood in
+            secret["neighborhood"] = neighborhood;
+        }.finally {
+            return secret.saveInBackgroundPromise()
+        }
     }
     
     let object: PFObject
@@ -30,6 +35,10 @@ class Secret: Modelable {
     
     var body: String? {
         return object["body"] as? String
+    }
+
+    var neighborhood: String? {
+        return object["neighborhood"] as? String
     }
     
     var createdAt: NSDate? {
