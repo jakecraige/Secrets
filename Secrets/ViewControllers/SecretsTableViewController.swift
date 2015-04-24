@@ -46,15 +46,7 @@ class SecretsTableViewController: UITableViewController {
             self.refreshControl?.endRefreshing()
         }
     }
-    
-    @IBAction func signOutTapped(sender: UIBarButtonItem) {
-        UserAuthenticator.signOut()
-        let sb = UIStoryboard(name: "Authentication", bundle: NSBundle.mainBundle())
-        if let vc = sb.instantiateInitialViewController() as? UINavigationController {
-            presentViewController(vc, animated: true, completion: nil)
-        }
-    }
-    
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == Constants.ViewSecretIdentifier {
             if let vc = segue.destinationViewController as? ViewSecretViewController, indexPath = sender as? NSIndexPath {
