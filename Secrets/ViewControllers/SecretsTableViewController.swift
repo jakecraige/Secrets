@@ -23,7 +23,8 @@ class SecretsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = SecretTableViewCell.Constants.RowHeight
+        tableView.estimatedRowHeight = SecretTableViewCell.Constants.EstimatedRowHeight
         tableView.registerNib(UINib(nibName: "SecretTableViewCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: Constants.CellIdentifier)
         
         refreshControl = UIRefreshControl()

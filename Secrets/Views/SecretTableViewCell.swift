@@ -13,6 +13,11 @@ class SecretTableViewCell: UITableViewCell {
     @IBOutlet weak var createdAtLabel: UILabel!
     @IBOutlet weak var heartsButton: UIButton!
     
+    struct Constants {
+        static let RowHeight = UITableViewAutomaticDimension
+        static let EstimatedRowHeight: CGFloat = 67
+    }
+    
     var viewModel: SecretViewModel?
     
     override func awakeFromNib() {
@@ -20,7 +25,6 @@ class SecretTableViewCell: UITableViewCell {
         
         heartsButton.titleLabel?.font = UIFont.fontAwesomeOfSize(15)
         heartsButton.titleLabel?.text = nil
-        bodyLabel.sizeToFit()
     }
     
     func configureWithSecret(secret: Secret) {

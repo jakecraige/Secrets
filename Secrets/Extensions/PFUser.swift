@@ -22,14 +22,14 @@ extension PFUser {
         }
     }
     
-    func signUpInBackgroundPromise() -> Promise<PFUser> {
-        let defer = Promise<PFUser>.defer()
+    func signUpInBackgroundPromise() -> Promise<Bool> {
+        let defer = Promise<Bool>.defer()
         
-        self.signUpInBackgroundWithBlock() { (user: PFUser?, error: NSError?) in
+        self.signUpInBackgroundWithBlock() { (succeeded: Bool, error: NSError?) in
             if let err = error {
                 defer.reject(err)
             } else {
-                defer.fulfill(user!)
+                defer.fulfill(succeeded)
             }
         }
         

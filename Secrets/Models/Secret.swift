@@ -31,6 +31,7 @@ class Secret: Modelable {
     var body: String? {
         return object["body"] as? String
     }
+    
     var createdAt: NSDate? {
         return object.createdAt
     }

@@ -86,6 +86,22 @@ class ViewSecretViewController: UIViewController, UITableViewDataSource, UITable
         }
     }
     
+    func tableView(tableView: UITableView, estimatedHeightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return SecretTableViewCell.Constants.EstimatedRowHeight;
+        } else {
+            return CommentTableViewCell.Constants.EstimatedRowHeight;
+        }
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+         if indexPath.row == 0 {
+            return SecretTableViewCell.Constants.RowHeight;
+        } else {
+            return CommentTableViewCell.Constants.RowHeight;
+        }
+    }
+    
     // MARK: UITextFieldDelegate
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -125,7 +141,6 @@ class ViewSecretViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func keyboardWillShow(notification: NSNotification) {
-        println("keyboardwillshow")
         view.addGestureRecognizer(keyboardTapRecognizer)
         if let kbSize = notification.userInfo?[UIKeyboardFrameBeginUserInfoKey]?.CGRectValue().size {
             animateFrame(kbSize.height, up: true)
@@ -133,7 +148,6 @@ class ViewSecretViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     func keyboardWillBeHidden(notification: NSNotification) {
-        println("keyboardwillBEHIDDEN")
         if let kbSize = notification.userInfo?[UIKeyboardFrameBeginUserInfoKey]?.CGRectValue().size {
             animateFrame(kbSize.height, up: false)
         }

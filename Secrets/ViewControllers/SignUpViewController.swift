@@ -27,18 +27,13 @@ class SignUpViewController: AuthenticationViewController, UITextFieldDelegate {
             return 1
         }
         
-        UserAuthenticator.signUp(email, password: password).then { (user: PFUser) in
+        let _:() = UserAuthenticator.signUp(email, password: password).then { _ in
             self.presentMainFlow()
-        }.catch(onQueue: dispatch_get_main_queue(), body: onError)
-        
-//        UserAuthenticator.signUp(email, password: password).then { (user: PFUser) -> Void in
-//            self.presentMainFlow()
-//            return;
-//        }.catch { (error: NSError) -> Void in
-//            let errorMessage = result.error?.userInfo?["error"] as? String
-//            self.alertWithTitle("Error", message: errorMessage)
-//            return;
-//        }
+        }.catch { error -> Void in
+            let errorMessage = error.userInfo?["error"] as? String
+            self.alertWithTitle("Error", message: errorMessage)
+            return;
+        }
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {

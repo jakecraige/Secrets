@@ -13,6 +13,11 @@ class CommentTableViewCell: UITableViewCell {
     @IBOutlet weak var commentBodyLabel: UILabel!
     @IBOutlet weak var createdAtLabel: UILabel!
     
+    struct Constants {
+        static let RowHeight = UITableViewAutomaticDimension
+        static let EstimatedRowHeight: CGFloat = 63
+    }
+    
     func configureWithComment(comment: Comment?) {
         commentBodyLabel.text = comment?.body
     }

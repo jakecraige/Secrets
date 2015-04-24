@@ -10,7 +10,7 @@ import PromiseKit
 import LlamaKit
 
 class UserAuthenticator {
-    class func signUp(email: String, password: String) -> Promise<PFUser> {
+    class func signUp(email: String, password: String) -> Promise<Bool> {
         var user = PFUser()
         user.username = email
         user.password = password

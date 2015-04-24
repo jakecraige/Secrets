@@ -113,8 +113,6 @@
 		E747E9CE1AD8204C0049018E /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		E747E9D01AD824EA0049018E /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = Secrets/Frameworks/Bolts.framework; sourceTree = "<group>"; };
 		E747E9D11AD824EA0049018E /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = Secrets/Frameworks/Parse.framework; sourceTree = "<group>"; };
-		E74FCE631AE1CA630040E818 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
-		E74FCE651AE1CA820040E818 /* libReveal.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libReveal.dylib; sourceTree = "<group>"; };
 		E74FCE681AE1CC2C0040E818 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		E74FCE6A1AE1CC430040E818 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		E79190121AE1F9B3002B5B7B /* OMGHTTPURLRQ.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OMGHTTPURLRQ.framework; path = Carthage/Build/iOS/OMGHTTPURLRQ.framework; sourceTree = "<group>"; };
@@ -127,6 +125,7 @@
 		E7B650101AE1E71E00D1F499 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		E7B650121AE1E81D00D1F499 /* PFQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PFQuery.swift; sourceTree = "<group>"; };
 		E7B650141AE1E98B00D1F499 /* Modelable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Modelable.swift; sourceTree = "<group>"; };
+		E7CB27D41AEA9DA800D61F3F /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Reveal.framework; path = Secrets/Frameworks/Reveal.framework; sourceTree = "<group>"; };
 		E7D59F3D1AD8384500ECB484 /* Authentication.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Authentication.storyboard; sourceTree = "<group>"; };
 		E7D59F411AD8428000ECB484 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = ViewControllers/SignUpViewController.swift; sourceTree = "<group>"; };
 		E7D59F431AD8428F00ECB484 /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignInViewController.swift; path = ViewControllers/SignInViewController.swift; sourceTree = "<group>"; };
@@ -157,6 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E747E9A51AD6D60B0049018E /* LlamaKit.framework in Frameworks */,
 				E74FCE6B1AE1CC430040E818 /* Accounts.framework in Frameworks */,
 				E74FCE691AE1CC2C0040E818 /* Social.framework in Frameworks */,
 				E747E9C91AD6D9840049018E /* libsqlite3.dylib in Frameworks */,
@@ -169,7 +169,6 @@
 				E747E9B91AD6D92F0049018E /* CoreGraphics.framework in Frameworks */,
 				E747E9B71AD6D9270049018E /* CFNetwork.framework in Frameworks */,
 				E747E9B51AD6D9210049018E /* AudioToolbox.framework in Frameworks */,
-				E747E9A51AD6D60B0049018E /* LlamaKit.framework in Frameworks */,
 				E747E9A81AD6D60B0049018E /* Runes.framework in Frameworks */,
 				E747E9D21AD824EA0049018E /* Bolts.framework in Frameworks */,
 				E747E9D31AD824EA0049018E /* Parse.framework in Frameworks */,
@@ -231,10 +230,11 @@
 		727A4DBCC4DC351E6D60CA02 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E74FCE6A1AE1CC430040E818 /* Accounts.framework */,
+				E74FCE681AE1CC2C0040E818 /* Social.framework */,
 				E79190121AE1F9B3002B5B7B /* OMGHTTPURLRQ.framework */,
 				E79190131AE1F9B3002B5B7B /* PromiseKit.framework */,
-				E74FCE651AE1CA820040E818 /* libReveal.dylib */,
-				E74FCE631AE1CA630040E818 /* Reveal.framework */,
+				E7CB27D41AEA9DA800D61F3F /* Reveal.framework */,
 				E747E9C81AD6D9840049018E /* libsqlite3.dylib */,
 				E747E9C61AD6D97C0049018E /* libz.dylib */,
 				E747E9D01AD824EA0049018E /* Bolts.framework */,
@@ -286,8 +286,6 @@
 		A7C60DC4C92EBEB19CA5711E = {
 			isa = PBXGroup;
 			children = (
-				E74FCE6A1AE1CC430040E818 /* Accounts.framework */,
-				E74FCE681AE1CC2C0040E818 /* Social.framework */,
 				BDCD5D5F2D80D2972AC5D75E /* Secrets */,
 				78DDC7674D413ABAFA863E27 /* UnitTests */,
 				2703AE00629F6A0295835047 /* Products */,
@@ -642,6 +640,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Secrets/Frameworks",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -676,6 +675,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Secrets/Frameworks",
 				);
 				OTHER_CFLAGS = (
 					"-DNS_BLOCK_ASSERTIONS=1",
