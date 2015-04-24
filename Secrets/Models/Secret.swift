@@ -19,6 +19,7 @@ class Secret: Modelable {
     class func createWithBody(body: String) -> Promise<Void> {
         var secret = PFObject(className: "Secret")
         secret["body"] = body
+        secret["user"] = PFUser.currentUser()
 
         return LocationManager.currentNeighborhood().then { neighborhood in
             secret["neighborhood"] = neighborhood;

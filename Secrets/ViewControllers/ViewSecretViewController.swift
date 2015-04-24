@@ -71,6 +71,15 @@ class ViewSecretViewController: UIViewController, UITableViewDataSource, UITable
         tableView.scrollToRowAtIndexPath(lastIndex, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
     }
 
+
+    @IBAction func shareSecret(sender: UIBarButtonItem) {
+        if let body = viewModel?.body {
+            let text = "Look at this secret! \"\(body)\""
+            let vc = UIActivityViewController(activityItems: [text], applicationActivities: nil)
+            presentViewController(vc, animated: true, completion: nil)
+        }
+    }
+
     // MARK: UITableViewDataSource
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
