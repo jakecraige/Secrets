@@ -26,10 +26,15 @@ class Comment: Modelable {
     class func whereSecretIs(secret: Secret) -> Promise<[Comment]> {
         var query = PFQuery(className: "Comment")
         query.whereKey("parent", equalTo: secret.object)
+        query.orderByAscending("createdAt")
         return query.findObjectsInBackgroundPromise()
     }
     
     var body: String? {
         return object["body"] as? String
+    }
+
+    var createdAt: NSDate? {
+        return object.createdAt
     }
 }

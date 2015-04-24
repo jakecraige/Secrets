@@ -12,6 +12,8 @@
 		82205F9840595A24D8D0ED45 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18A5BC68909FC89C632C465E /* Images.xcassets */; };
 		C2D074A6E528C83C3DA916FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1C92C7FCD24124E06A0C55 /* AppDelegate.swift */; };
 		D9567208177D66BC1F4D50BD /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 29ABAF428C826AD4E083FA01 /* Settings.bundle */; };
+		E71F52D81AEAB5B400A12D64 /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71F52D71AEAB5B400A12D64 /* PaddedTextField.swift */; };
+		E71F52DA1AEAC0EA00A12D64 /* CommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71F52D91AEAC0EA00A12D64 /* CommentViewModel.swift */; };
 		E747E9A51AD6D60B0049018E /* LlamaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E747E9A11AD6D60B0049018E /* LlamaKit.framework */; };
 		E747E9A81AD6D60B0049018E /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E747E9A41AD6D60B0049018E /* Runes.framework */; };
 		E747E9AD1AD6D7940049018E /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E747E9AC1AD6D7940049018E /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -95,6 +97,8 @@
 		CB1C92C7FCD24124E06A0C55 /* AppDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2149DDCBE1171E41A64A252 /* LaunchScreen.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		E2EB23E3AD3357C96CE6FAD3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		E71F52D71AEAB5B400A12D64 /* PaddedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddedTextField.swift; sourceTree = "<group>"; };
+		E71F52D91AEAC0EA00A12D64 /* CommentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewModel.swift; sourceTree = "<group>"; };
 		E747E9A11AD6D60B0049018E /* LlamaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LlamaKit.framework; path = Carthage/Build/iOS/LlamaKit.framework; sourceTree = "<group>"; };
 		E747E9A41AD6D60B0049018E /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = Carthage/Build/iOS/Runes.framework; sourceTree = "<group>"; };
 		E747E9AC1AD6D7940049018E /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = ../Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
@@ -341,6 +345,7 @@
 			children = (
 				E7F5E5331AE1AC2D00C812E8 /* SecretTableViewCell.swift */,
 				E7F5E52F1AE176CF00C812E8 /* CommentTableViewCell.swift */,
+				E71F52D71AEAB5B400A12D64 /* PaddedTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -409,6 +414,7 @@
 			isa = PBXGroup;
 			children = (
 				E7F5E52D1AE1674F00C812E8 /* SecretViewModel.swift */,
+				E71F52D91AEAC0EA00A12D64 /* CommentViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -579,6 +585,7 @@
 				C2D074A6E528C83C3DA916FE /* AppDelegate.swift in Sources */,
 				E7F5E52E1AE1674F00C812E8 /* SecretViewModel.swift in Sources */,
 				E7D59F421AD8428000ECB484 /* SignUpViewController.swift in Sources */,
+				E71F52DA1AEAC0EA00A12D64 /* CommentViewModel.swift in Sources */,
 				E7D59F521AD87D3A00ECB484 /* WelcomeViewController.swift in Sources */,
 				E7B650151AE1E98B00D1F499 /* Modelable.swift in Sources */,
 				E7D59F501AD87C8F00ECB484 /* AuthenticationViewController.swift in Sources */,
@@ -595,6 +602,7 @@
 				E7F5E5301AE176CF00C812E8 /* CommentTableViewCell.swift in Sources */,
 				E7AEDF741AD89D9C00C1A54F /* NSDate.swift in Sources */,
 				E7D59F481AD8489700ECB484 /* UserAuthenticator.swift in Sources */,
+				E71F52D81AEAB5B400A12D64 /* PaddedTextField.swift in Sources */,
 				E7B650131AE1E81D00D1F499 /* PFQuery.swift in Sources */,
 				E7B650111AE1E71E00D1F499 /* Comment.swift in Sources */,
 				E7AEDF781AD8A58800C1A54F /* FontAwesome.swift in Sources */,

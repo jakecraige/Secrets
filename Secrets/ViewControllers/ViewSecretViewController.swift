@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import PromiseKit
 
 class ViewSecretViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
     @IBOutlet weak var tableView: UITableView!
@@ -48,19 +49,28 @@ class ViewSecretViewController: UIViewController, UITableViewDataSource, UITable
         deregisterForKeyboardNotifications()
     }
     
-    func loadComments() {
-        Comment.whereSecretIs(viewModel!.secret).then { (comments: [Comment]) -> Void in
+    func loadComments() -> Promise<[Comment]> {
+        return Comment.whereSecretIs(viewModel!.secret).then { (comments: [Comment]) -> [Comment] in
             self.comments = comments
+            return self.comments;
         }
     }
     
     func createComment(text: String) {
-        Comment.createWithBody(text, secret: viewModel!.secret).then { _ -> Void in
+        Comment.createWithBody(text, secret: viewModel!.secret).then { _ -> Promise<[Comment]> in
             self.newCommentTextField.text = nil
-            self.loadComments()
+            return self.loadComments()
+        }.then { _ -> Void in
+            self.scrollToLastRow()
         }
     }
     
+    func scrollToLastRow() {
+        let lastRow  = tableView.numberOfRowsInSection(0) - 1
+        let lastIndex = NSIndexPath(forRow: lastRow, inSection: 0)
+        tableView.scrollToRowAtIndexPath(lastIndex, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
+    }
+
     // MARK: UITableViewDataSource
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -76,7 +86,6 @@ class ViewSecretViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCellWithIdentifier(Constants.SecretCellIdentifier) as! SecretTableViewCell
-            cell.userInteractionEnabled = false
             cell.configureWithSecret(viewModel!.secret)
             return cell
         } else {

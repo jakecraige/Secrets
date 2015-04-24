@@ -12,13 +12,21 @@ class CommentTableViewCell: UITableViewCell {
     @IBOutlet weak var userPhotoImageView: UIImageView!
     @IBOutlet weak var commentBodyLabel: UILabel!
     @IBOutlet weak var createdAtLabel: UILabel!
-    
+
     struct Constants {
         static let RowHeight = UITableViewAutomaticDimension
         static let EstimatedRowHeight: CGFloat = 63
     }
-    
-    func configureWithComment(comment: Comment?) {
-        commentBodyLabel.text = comment?.body
+
+    var viewModel: CommentViewModel?
+
+    func configureWithComment(comment: Comment) {
+        viewModel = CommentViewModel(comment: comment)
+        updateUI()
+    }
+
+    func updateUI() {
+        commentBodyLabel.text = viewModel?.body
+        createdAtLabel.text = viewModel?.createdTimeAgo
     }
 }
