@@ -478,7 +478,7 @@
 				ORGANIZATIONNAME = thoughtbot;
 				TargetAttributes = {
 					4C50CEF5C97DCD9DE48371F2 = {
-						DevelopmentTeam = 967Y67253P;
+						DevelopmentTeam = 8E7TQ638ZD;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
 								enabled = 0;
@@ -665,6 +665,7 @@
 					Reveal,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "04251b49-b81c-4e3f-a985-96e2a94e119f";
 				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 			};
@@ -708,6 +709,7 @@
 					Reveal,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "04251b49-b81c-4e3f-a985-96e2a94e119f";
 				PUBLIC_HEADERS_FOLDER_PATH = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
