@@ -20,7 +20,10 @@ class Comment: Modelable {
         let comment = PFObject(className: "Comment")
         comment["body"] = body
         comment["parent"] = secret.object
-        return comment.saveInBackgroundPromise()
+        comment["user"] = PFUser.currentUser()
+        return comment.saveInBackgroundPromise().then {
+            secret.sendNewCommentNotificationToCreator(Comment(object: comment))
+        }
     }
     
     class func whereSecretIs(secret: Secret) -> Promise<[Comment]> {
@@ -36,5 +39,9 @@ class Comment: Modelable {
 
     var createdAt: NSDate? {
         return object.createdAt
+    }
+
+    var user: PFUser? {
+        return object["user"] as? PFUser
     }
 }

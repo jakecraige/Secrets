@@ -60,7 +60,15 @@ class Secret: Modelable {
             return nil
         }
     }
-    
+
+    var user: PFUser? {
+        return object["user"] as? PFUser
+    }
+
+    var currentUsersSecret: Bool {
+        return PFUser.currentUser() != object["user"] as? PFUser
+    }
+
     func addHeart() {
         self.object.incrementKey("hearts")
     }
@@ -70,11 +78,26 @@ class Secret: Modelable {
     }
 
     func registerForCreatorChannel() -> Promise<Void> {
-        if let pushManager = (UIApplication.sharedApplication().delegate as? AppDelegate)?.pushManager {
-
-            return pushManager.registerForChannel(creatorChannel)
+        if let pm = pushManager {
+            return pm.registerForChannel(creatorChannel)
         } else {
             return Promise(value: Void())
         }
+    }
+
+    func sendNewCommentNotificationToCreator(comment: Comment) {
+        if self.user != comment.user {
+            let msg = commentNotificationMessage(comment)
+            pushManager?.sendNotificationToChannel(creatorChannel, message: msg)
+        }
+    }
+
+    private func commentNotificationMessage(comment: Comment) -> String {
+        let body = comment.body ?? ""
+        return "New comment on your secret: \"\(body)\""
+    }
+
+    private var pushManager: PushManager? {
+        return (UIApplication.sharedApplication().delegate as? AppDelegate)?.pushManager
     }
 }

@@ -28,7 +28,9 @@ class PushManager {
 
     func didRegisterForRemoteNotificationsWithDeviceToken(deviceToken: NSData) {
         installation.setDeviceTokenFromData(deviceToken)
-        installation.channels = ["global"]
+        if installation.channels?.count == 0 {
+            installation.channels = ["global"]
+        }
         installation["user"] = PFUser.currentUser()
         installation.saveInBackgroundPromise()
     }
@@ -51,6 +53,16 @@ class PushManager {
             return installation.saveInBackgroundPromise()
         } else {
             return Promise(value: Void())
+        }
+    }
+
+    func sendNotificationToChannel(channel: String?, message: String) {
+        if let chan = channel {
+            let push = PFPush()
+            push.setChannel(chan)
+            push.setMessage(message)
+            push.sendPushInBackground()
+            println("send push to \(chan) with message \(message)")
         }
     }
 }
