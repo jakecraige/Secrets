@@ -17,14 +17,17 @@ class Secret: Modelable {
     }
     
     class func createWithBody(body: String) -> Promise<Void> {
-        var secret = PFObject(className: "Secret")
-        secret["body"] = body
-        secret["user"] = PFUser.currentUser()
+        var newSecret = PFObject(className: "Secret")
+        newSecret["body"] = body
+        newSecret["user"] = PFUser.currentUser()
 
         return LocationManager.currentNeighborhood().then { neighborhood in
-            secret["neighborhood"] = neighborhood;
+            newSecret["neighborhood"] = neighborhood;
         }.finally {
-            return secret.saveInBackgroundPromise()
+            return newSecret.saveInBackgroundPromise().then { _ -> Promise<Void> in
+                let secret = Secret(object: newSecret)
+                return secret.registerForCreatorChannel()
+            }
         }
     }
     
@@ -49,6 +52,14 @@ class Secret: Modelable {
     var hearts: Int {
         return object["hearts"] as? Int ?? 0
     }
+
+    var creatorChannel: String? {
+        if let objectId = object.objectId {
+             return "secret-\(objectId)-channel"
+        } else {
+            return nil
+        }
+    }
     
     func addHeart() {
         self.object.incrementKey("hearts")
@@ -56,5 +67,14 @@ class Secret: Modelable {
     
     func saveEventually() {
         object.saveEventually()
+    }
+
+    func registerForCreatorChannel() -> Promise<Void> {
+        if let pushManager = (UIApplication.sharedApplication().delegate as? AppDelegate)?.pushManager {
+
+            return pushManager.registerForChannel(creatorChannel)
+        } else {
+            return Promise(value: Void())
+        }
     }
 }
