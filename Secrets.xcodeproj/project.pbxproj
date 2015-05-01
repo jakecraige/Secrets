@@ -12,6 +12,7 @@
 		82205F9840595A24D8D0ED45 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18A5BC68909FC89C632C465E /* Images.xcassets */; };
 		C2D074A6E528C83C3DA916FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1C92C7FCD24124E06A0C55 /* AppDelegate.swift */; };
 		D9567208177D66BC1F4D50BD /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 29ABAF428C826AD4E083FA01 /* Settings.bundle */; };
+		E71947501AF3E76B0080E250 /* PushManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E719474F1AF3E76B0080E250 /* PushManager.swift */; };
 		E71F52D81AEAB5B400A12D64 /* PaddedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71F52D71AEAB5B400A12D64 /* PaddedTextField.swift */; };
 		E71F52DA1AEAC0EA00A12D64 /* CommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71F52D91AEAC0EA00A12D64 /* CommentViewModel.swift */; };
 		E71F52DC1AEAC61500A12D64 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71F52DB1AEAC61500A12D64 /* SettingsTableViewController.swift */; };
@@ -99,6 +100,7 @@
 		CB1C92C7FCD24124E06A0C55 /* AppDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2149DDCBE1171E41A64A252 /* LaunchScreen.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		E2EB23E3AD3357C96CE6FAD3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		E719474F1AF3E76B0080E250 /* PushManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PushManager.swift; sourceTree = "<group>"; };
 		E71F52D71AEAB5B400A12D64 /* PaddedTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddedTextField.swift; sourceTree = "<group>"; };
 		E71F52D91AEAC0EA00A12D64 /* CommentViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewModel.swift; sourceTree = "<group>"; };
 		E71F52DB1AEAC61500A12D64 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsTableViewController.swift; path = ViewControllers/SettingsTableViewController.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 				E7D59F531AD8821400ECB484 /* Secret.swift */,
 				E7B650101AE1E71E00D1F499 /* Comment.swift */,
 				E71F52DD1AEAD87500A12D64 /* LocationManager.swift */,
+				E719474F1AF3E76B0080E250 /* PushManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -595,6 +598,7 @@
 				E7D59F521AD87D3A00ECB484 /* WelcomeViewController.swift in Sources */,
 				E7B650151AE1E98B00D1F499 /* Modelable.swift in Sources */,
 				E7D59F501AD87C8F00ECB484 /* AuthenticationViewController.swift in Sources */,
+				E71947501AF3E76B0080E250 /* PushManager.swift in Sources */,
 				E7D59F541AD8821400ECB484 /* Secret.swift in Sources */,
 				74AEE5CFB36603A65F62C9D7 /* Main.storyboard in Sources */,
 				200FD855D82021E68500E1EA /* LaunchScreen.xib in Sources */,

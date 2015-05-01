@@ -5,6 +5,7 @@ import Bolts
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
+    var pushManager: PushManager?
 
     // MARK: UIApplicationDelegate
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
@@ -16,33 +17,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
-        let installation = PFInstallation.currentInstallation()
-        installation.setDeviceTokenFromData(deviceToken)
-        installation.channels = ["global"]
-        installation["user"] = PFUser.currentUser()
-        installation.saveInBackgroundPromise().then { _ in
-            println("Installation saved for device token: \(deviceToken)")
-        }
+        pushManager?.didRegisterForRemoteNotificationsWithDeviceToken(deviceToken)
     }
 
     func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
-        PFPush.handlePush(userInfo)
+        pushManager?.didReceiveRemoteNotification(userInfo)
     }
 
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
-        if error.code == 3010 {
-            println("Push notifications are not supported in the iOS Simulator.")
-        } else {
-            println("application:didFailToRegisterForRemoteNotificationsWithError: %@", error)
-        }
+        pushManager?.didFailToRegisterForRemoteNotificationsWithError(error)
     }
 
     // MARK: initializers
     func initializePushNotifications(application: UIApplication) {
-        let notificationTypes = UIUserNotificationType.Alert
-        let settings = UIUserNotificationSettings(forTypes: notificationTypes, categories: nil)
-        application.registerUserNotificationSettings(settings)
-        application.registerForRemoteNotifications()
+        pushManager = PushManager(application: application)
+        pushManager?.registerForNotifications()
     }
 
     func initializeStoryboard() {
