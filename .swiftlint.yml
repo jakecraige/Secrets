@@ -1,2 +1,2 @@
 disabled_rules:
-  - type_name
+  - variable_name
