@@ -1,1 +1,1 @@
-let whaty = 1   
+let b = 1   
