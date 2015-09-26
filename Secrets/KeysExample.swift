@@ -68,6 +68,7 @@ public extension Optional {
     }
 }
 
-func foo(b: String!) {
-  print("hello world: \(b!)")
+func foo(bar: String!) {
+  let x = 1
+  print("hello world: \(bar as Int!)")
 }
