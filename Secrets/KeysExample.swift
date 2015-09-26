@@ -69,5 +69,6 @@ public extension Optional {
 }
 
 func foo(bar: String!) {
+ // haha
   print("hello world: \(bar!)")
 }
